@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ApiExam</string>
+    <string name="textview1">currency code</string>
+    <string name="textview2">countries using currency</string>
+    <string name="button">find</string>
+    <string name="answer">Answer</string>
+    <string name="input">Currency</string>
+    <string name="error1">Connection error</string>
+    <string name="error2">Wrong input data</string>
+</resources>

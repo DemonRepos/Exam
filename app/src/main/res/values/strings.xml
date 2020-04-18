@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">ApiExam</string>
-    <string name="textview1">Введите код валюты</string>
-    <string name="textview2">Страны с этой валютой</string>
-    <string name="button">нажать</string>
-    <string name="answer">Ответ</string>
-    <string name="input">Валюта</string>
-    <string name="error1">Ошибка подключения к серверу</string>
-    <string name="error2">Ошибка входных данных</string>
+    <string name="textview1">Indtast valutakode</string>
+    <string name="textview2">Lande med denne valuta</string>
+    <string name="button">at finde</string>
+    <string name="answer">Svaret</string>
+    <string name="input">Valuta</string>
+    <string name="error1">Fejl ved forbindelse til serveren</string>
+    <string name="error2">Inputfejl</string>
 </resources>

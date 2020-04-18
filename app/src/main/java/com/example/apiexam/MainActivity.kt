@@ -34,7 +34,10 @@ class MainActivity : AppCompatActivity() {
                         if (response.isSuccessful)
                         {
                             val k = response.body()
-                            result1.text = k?.first()!!.name
+                            var str = ""
+                            k?.forEach { str += "${it.name}, " }
+                            str = str.substring(0,str.length-2)
+                            result1.text = str
                         }
                         else
                         {
