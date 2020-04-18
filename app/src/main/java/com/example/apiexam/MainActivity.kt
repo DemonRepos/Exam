@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
                 val res = service.getCurrency(q1.text.toString())
                 res.enqueue(object : Callback<List<Country>> {
                     override fun onFailure(call: Call<List<Country>>, t: Throwable) {
-                        result1.text = "Ошибка подключения к серверу"
+                        result1.setText(R.string.error1)
                     }
 
                     override fun onResponse(call: Call<List<Country>>, response: Response<List<Country>>) {
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                         }
                         else
                         {
-                            result1.text = "Ошибка входных данных"
+                            result1.setText(R.string.error2)
                         }
                     }
 
