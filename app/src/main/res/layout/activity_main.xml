@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/q1"
+        android:id="@+id/q"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -33,15 +33,15 @@
         app:layout_constraintTop_toTopOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/press1"
+        android:id="@+id/press"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/button"
-        app:layout_constraintEnd_toEndOf="@+id/q1"
+        app:layout_constraintEnd_toEndOf="@+id/q"
         app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/q1" />
+        app:layout_constraintTop_toBottomOf="@+id/q" />
 
     <TextView
         android:id="@+id/textView3"
@@ -49,13 +49,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/textview2"
-        app:layout_constraintEnd_toEndOf="@+id/press1"
+        app:layout_constraintEnd_toEndOf="@+id/press"
         app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="@+id/press1"
-        app:layout_constraintTop_toBottomOf="@+id/press1" />
+        app:layout_constraintStart_toStartOf="@+id/press"
+        app:layout_constraintTop_toBottomOf="@+id/press" />
 
     <TextView
-        android:id="@+id/result1"
+        android:id="@+id/result"
         android:layout_width="351dp"
         android:layout_height="123dp"
         android:layout_marginTop="20dp"

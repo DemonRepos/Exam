@@ -14,19 +14,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val savedPref = getPreferences(Context.MODE_PRIVATE)
-        press1.setOnClickListener {
-            val savedText = savedPref.getString(q1.text.toString(), "")
+        press.setOnClickListener {
+            val savedText = savedPref.getString(q.text.toString(), "")
             if (savedText!="")
             {
-                result1.text = savedText
+                result.text = savedText
             }
             else
             {
                 val service = IApi.create()
-                val res = service.getCurrency(q1.text.toString())
+                val res = service.getCurrency(q.text.toString())
                 res.enqueue(object : Callback<List<Country>> {
                     override fun onFailure(call: Call<List<Country>>, t: Throwable) {
-                        result1.setText(R.string.error1)
+                        result.setText(R.string.error1)
                     }
 
                     override fun onResponse(call: Call<List<Country>>, response: Response<List<Country>>) {
@@ -36,16 +36,39 @@ class MainActivity : AppCompatActivity() {
                             var str = ""
                             k?.forEach { str += "${it.name}, " }
                             str = str.substring(0,str.length-2)
-                            result1.text = str
+                            result.text = str
+                            val ed = savedPref.edit()
+                            ed.putString(q.text.toString(), result.text.toString())
+                            ed.apply()
                         }
                         else
                         {
-                            result1.setText(R.string.error2)
+                            result.setText(R.string.error2)
                         }
                     }
 
                 })
             }
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        val sPref = getPreferences(Context.MODE_PRIVATE)
+        val ed = sPref.edit()
+        ed.putString("last",q.text.toString())
+
+        ed.apply()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val sPref = getPreferences(Context.MODE_PRIVATE)
+        val savedText = sPref.getString("last", "")
+        if (savedText != "")
+        {
+            result.text = sPref.getString(savedText,"")
+            q.setText(savedText)
         }
     }
 }
