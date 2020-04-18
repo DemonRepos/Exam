@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ApiExam</string>
+    <string name="textview1">Введите код валюты</string>
+    <string name="textview2">Страны с этой валютой</string>
+    <string name="button">нажать</string>
+    <string name="answer">ответ</string>
+    <string name="input">Валюта</string>
 </resources>

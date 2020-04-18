@@ -13,7 +13,6 @@ interface IApi
     companion object Factory {
         fun create(): IApi {
             val retrofit = Retrofit.Builder()
-                //.addConverterFactory(JaxbConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl("https://restcountries.eu/")
                 .build()

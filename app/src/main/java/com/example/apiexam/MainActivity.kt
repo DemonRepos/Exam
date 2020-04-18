@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val savedPref = getPreferences(Context.MODE_PRIVATE)
-       // val orientation = this.resources.configuration.orientation
         press1.setOnClickListener {
             val savedText = savedPref.getString(q1.text.toString(), "")
             if (savedText!="")
