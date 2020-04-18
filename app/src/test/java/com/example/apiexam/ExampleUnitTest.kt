@@ -17,7 +17,7 @@ class ExampleUnitTest {
         assertEquals(4, 2 + 2)
         assertEquals("Russian Federation", tester.test("rub"))
         assertEquals("Columbia", tester.test("cop"))
-        assertEquals("Ukrain", tester.test("uah"))
+        assertEquals("Ukraine", tester.test("uah"))
         assertEquals("Sweden", tester.test("sek"))
         assertEquals(Resources.getSystem().getString(R.string.error2), tester.test("rgb"))
     }
