@@ -16,7 +16,7 @@ class ExampleUnitTest {
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
         assertEquals("Russian Federation", tester.test("rub"))
-        assertEquals("Columbia", tester.test("cop"))
+        assertEquals("Colombia", tester.test("cop"))
         assertEquals("Ukraine", tester.test("uah"))
         assertEquals("Sweden", tester.test("sek"))
         assertEquals(Resources.getSystem().getString(R.string.error2), tester.test("rgb"))
