@@ -4,6 +4,9 @@ import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,19 +23,27 @@ class MainActivity : AppCompatActivity() {
             }
             else
             {
-                val retrofit = MyRetrofit()
-            val ans = retrofit.search(q1.text.toString())
-            var str = ""
-            for (i in ans)
-                str +="$i, "
-            //str = str.substring(str.length-3)
-            result1.text = str
-            if (ans.first()!="Ошибка подключения к серверу" && ans.first()!="Ошибка входных данных")
-            {
-                val ed = savedPref.edit()
-                ed.putString(q1.text.toString(), result1.text.toString())
-                ed.apply()
-            }
+                val ans = mutableListOf<String>()
+                val service = IApi.create()
+                val res = service.getCurrency(q1.text.toString())
+                res.enqueue(object : Callback<List<Country>> {
+                    override fun onFailure(call: Call<List<Country>>, t: Throwable) {
+                        result1.text = "Ошибка подключения к серверу"
+                    }
+
+                    override fun onResponse(call: Call<List<Country>>, response: Response<List<Country>>) {
+                        if (response.isSuccessful)
+                        {
+                            val k = response.body()
+                            result1.text = k?.first()!!.name
+                        }
+                        else
+                        {
+                            result1.text = "Ошибка входных данных"
+                        }
+                    }
+
+                })
             }
         }
     }
