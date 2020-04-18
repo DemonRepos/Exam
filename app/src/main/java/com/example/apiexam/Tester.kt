@@ -23,7 +23,7 @@ class Tester {
             }
             else
             {
-                b = Resources.getSystem().getString(R.string.error2)
+                b = "Inputfejl"
             }
 
         } catch (ex: Exception) {
