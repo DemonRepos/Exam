@@ -1,6 +1,5 @@
 package com.example.apiexam
 
-import android.content.res.Resources
 import org.junit.Test
 
 import org.junit.Assert.*
