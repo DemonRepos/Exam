@@ -8,7 +8,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class Tester {
-    fun test(a:String)
+    fun test(a:String):String
     {
         var b = ""
         val service = IApi.create()
@@ -35,5 +35,6 @@ class Tester {
             }
 
         })
+        return b
     }
 }
