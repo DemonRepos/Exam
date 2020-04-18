@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
             }
             else
             {
-                val ans = mutableListOf<String>()
                 val service = IApi.create()
                 val res = service.getCurrency(q1.text.toString())
                 res.enqueue(object : Callback<List<Country>> {
